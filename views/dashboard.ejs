@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SICT Records Management System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://ai-public.creatie.ai/gen_page/tailwind-custom.css" rel="stylesheet" />
+    <script
+        src="https://cdn.tailwindcss.com/3.4.5?plugins=forms@0.5.7,typography@0.5.13,aspect-ratio@0.4.2,container-queries@0.1.1"></script>
+    <script src="https://ai-public.creatie.ai/gen_page/tailwind-config.min.js" data-color="#000000"
+        data-border-radius="small"></script>
+</head>
+
+<body class="bg-gray-50 min-h-screen">
+    <div class="min-h-screen flex items-center justify-center">
+        <div class="max-w-6xl w-full mx-auto p-6">
+            <div class="text-center mb-8">
+                <img src="https://ai-public.creatie.ai/gen_page/logo_placeholder.png" alt="SICT Logo"
+                    class="h-16 mx-auto mb-4" />
+                <h2 class="text-2xl font-bold text-gray-900">Admin Management System</h2>
+                <p class="text-gray-600 mt-2">Records Management System</p>
+            </div>
+            <div class="bg-white shadow-sm rounded-lg p-6">
+                <div class="mb-6">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-lg font-medium">Admin Management</h3>
+                        <div class="flex gap-2"><input type="text" placeholder="Search users..."
+                                class="border-gray-300 focus:border-custom focus:ring-custom !rounded-button" /><select
+                                class="border-gray-300 focus:border-custom focus:ring-custom !rounded-button">
+                                <option value="">All Departments</option>
+                                <option value="IFT">IFT</option>
+                                <option value="SOE">SOE</option>
+                                <option value="CSC">CSC</option>
+                                <option value="CYB">CYB</option>
+                            </select></div>
+                    </div>
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th
+                                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Name</th>
+                                <th
+                                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Department</th>
+                                <th
+                                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Reg No.</th>
+                                <th
+                                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200" id="tbody">
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">John Doe</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">IFT</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Admin</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium"><button
+                                        class="text-custom hover:text-custom-600 mr-3">Edit</button><button
+                                        class="text-red-600 hover:text-red-900">Delete</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="flex justify-end mt-4"><button
+                        class="bg-custom text-white py-2 px-4 !rounded-button hover:bg-custom-600">Add New
+                        Admin</button></div>
+            </div>
+
+
+            <div id="admin-modal" class="fixed inset-0 bg-black bg-opacity-50 items-center justify-center">
+                <div class="bg-white rounded-lg p-6 w-full max-w-md">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-lg font-medium">Add New Admin</h3><button
+                            class="text-gray-500 hover:text-gray-700"
+                            onclick="document.getElementById('admin-modal').classList.add('hidden')"><i
+                                class="fas fa-times"></i></button>
+                    </div>
+                    <form class="space-y-4">
+                        <div><label class="block text-sm font-medium text-gray-700">Name</label><input type="text"
+                                class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-custom focus:ring-custom" />
+                        </div>
+                        <div><label class="block text-sm font-medium text-gray-700">Department</label><select
+                                class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-custom focus:ring-custom">
+                                <option value="">Select Department</option>
+                                <option value="IFT">IFT</option>
+                                <option value="SOE">SOE</option>
+                                <option value="CSC">CSC</option>
+                                <option value="CYB">CYB</option>
+                            </select></div>
+                        <div><label class="block text-sm font-medium text-gray-700">Role</label><select
+                                class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-custom focus:ring-custom">
+                                <option value="">Select Role</option>
+                                <option value="admin">Admin</option>
+                                <option value="super_admin">Super Admin</option>
+                            </select></div>
+                        <div class="mt-6 flex justify-end space-x-3"><button type="button"
+                                class="bg-gray-100 text-gray-700 py-2 px-4 rounded-md hover:bg-gray-200"
+                                onclick="document.getElementById('admin-modal').classList.add('hidden')">Cancel</button><button
+                                type="submit"
+                                class="bg-custom text-white py-2 px-4 rounded-md hover:bg-custom-600">Save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            
+            <div class="mt-8 text-center text-sm text-gray-500">
+                <p>School of ICT © 2024. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        const studentTableBody = document.getElementById('tbody');
+
+async function fetchStudents() {
+  try {
+    const response = await fetch('/view/students', {
+      headers: {
+        'Authorization': `Bearer ${localStorage.getItem('token')}`
+      }
+    });
+
+    const students = await response.json();
+    console.log(students)
+
+    studentTableBody.innerHTML = '';
+
+    students.forEach((student) => {
+      const row = document.createElement('tr');
+
+      row.innerHTML = `
+        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">${student.name}</td>
+        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${student.dept}</td>
+        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${student.regNo}</td>
+        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+          <button class="text-custom hover:text-custom-600 mr-3">Edit</button>
+          <button class="text-red-600 hover:text-red-900">Delete</button>
+        </td>
+      `;
+
+      studentTableBody.appendChild(row);
+    });
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+fetchStudents();
+
+
+
+
+const adminModal = document.getElementById('admin-modal');
+const adminForm = adminModal.querySelector('form');
+
+adminForm.addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  const name = adminForm.elements['name'].value;
+  const email = adminForm.elements['email'].value;
+  const password = adminForm.elements['password'].value;
+  const department = adminForm.elements['department'].value;
+  const role = adminForm.elements['role'].value;
+
+  try {
+    const response = await fetch('/create-personal-record-unit-admin', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${localStorage.getItem('token')}`
+      },
+      body: JSON.stringify({ name, email, password, department })
+    });
+
+    const data = await response.json();
+
+    if (response.ok) {
+      // Admin created successfully, close the modal
+      adminModal.classList.add('hidden');
+      // You can also display a success message or reload the page
+    } else {
+
+
+        // Error creating admin, display error message
+      console.error(data.message);
+    }
+  } catch (error) {
+    console.error(error);
+  }
+});
+
+    </script>
+</body>
+</html>
